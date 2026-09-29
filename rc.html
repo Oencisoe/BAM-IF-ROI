@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Authorization for Release of Information (HIPAA): Regional Center | BAM IF LLC</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 9pt; color: #111; background: #e0e0e0; }
+
+  .page {
+    background: #fff;
+    width: 8.5in;
+    height: 11in;
+    margin: 0.15in auto;
+    padding: 0.28in 0.5in 0.2in;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  }
+
+  @media print {
+    html, body { margin:0; padding:0; background:#fff; }
+    .page { box-shadow:none; margin:0; padding:0.28in 0.5in 0.2in; width:8.5in; height:11in; overflow:hidden; }
+    .print-btn { display:none !important; }
+    select { -webkit-appearance:none; appearance:none; border:none !important; background:transparent !important; font-weight:bold; color:#000; }
+  }
+
+  /* HEADER */
+  .hdr { display:flex; align-items:center; gap:8px; margin-bottom:5px; border-left:4px solid #1a3a6e; padding-left:8px; }
+  .hdr img { height:52px; width:auto; }
+  .hdr-txt { font-size:8.5pt; line-height:1.4; }
+  .hdr-txt strong { font-size:10pt; }
+
+  /* TITLE */
+  h1 { text-align:center; font-size:11.5pt; text-transform:uppercase; border-bottom:2px solid #000; padding-bottom:2px; margin-bottom:6px; letter-spacing:0.3px; }
+
+  /* SECTION HEADINGS */
+  .sec { font-weight:bold; font-size:9pt; margin:5px 0 3px; border-bottom:1px solid #444; padding-bottom:1px; }
+
+  /* ROWS */
+  .row { display:flex; gap:10px; margin-bottom:4px; }
+  .f { display:flex; flex-direction:column; flex:1; min-width:0; }
+  .f.w2 { flex:2; }
+  .f.w3 { flex:3; }
+  .f > .lbl { font-size:7.5pt; color:#444; font-weight:bold; margin-bottom:0px; white-space:nowrap; }
+
+  /* INPUTS */
+  input[type="text"] {
+    border:none; border-bottom:1px solid #555; padding:1px 2px;
+    font-size:9pt; font-family:Arial,sans-serif; background:transparent;
+    outline:none; width:100%; line-height:1.2;
+  }
+  input[type="text"]:focus { border-bottom-color:#2a5fad; }
+
+  /* DROPDOWN */
+  select {
+    border:1px solid #888; border-radius:2px; padding:2px 4px;
+    font-size:9pt; font-family:Arial,sans-serif;
+    background:#f9f9f9; cursor:pointer; outline:none; width:100%;
+  }
+  select:focus { border-color:#2a5fad; }
+
+  /* RC INFO BOX */
+  .rc-box {
+    border:1px solid #3a6ea5; border-radius:2px; background:#f0f5ff;
+    padding:3px 8px; font-size:8.5pt; line-height:1.5; margin-top:3px; min-height:32px;
+  }
+  .rc-title { font-weight:bold; color:#1a3a6e; }
+  .rc-empty { color:#aaa; font-style:italic; }
+
+  /* FROM BOX */
+  .from-box {
+    background:#f6f6f6; border:1px solid #ccc; border-radius:2px;
+    padding:3px 8px; font-size:8.8pt; line-height:1.5; margin-bottom:4px;
+  }
+
+  /* AUTH TEXT */
+  .auth-p { font-size:8.8pt; line-height:1.4; margin:3px 0; }
+  #authRCSpan { font-weight:bold; color:#1a3a6e; }
+
+  /* CHECKBOXES: 3 columns */
+  .check-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px 6px; margin:2px 0; }
+  .ci { display:flex; align-items:baseline; gap:4px; font-size:8.5pt; }
+  .ci input[type="checkbox"] { width:11px; height:11px; flex-shrink:0; cursor:pointer; position:relative; top:1px; }
+  .ci input[type="text"] { border:none; border-bottom:1px solid #888; font-size:8.5pt; font-family:Arial,sans-serif; background:transparent; outline:none; padding:0 2px; width:110px; }
+
+  /* RIGHTS */
+  .rights {
+    font-size:8pt; line-height:1.35; color:#333;
+    background:#fafafa; border-left:3px solid #aaa;
+    padding:3px 8px; margin:3px 0;
+  }
+
+  /* SIGNATURE */
+  .sig-block { margin-top:5px; }
+  .sig-row { display:flex; gap:20px; margin-bottom:6px; }
+  .sf { display:flex; flex-direction:column; flex:2; }
+  .sf.short { flex:0.7; min-width:90px; }
+  .sig-line { border-bottom:1px solid #333; height:20px; }
+  .sig-lbl { font-size:7.5pt; color:#444; margin-top:1px; }
+  .sig-tf { border:none; border-bottom:1px solid #555; padding:1px 2px; font-size:9pt; font-family:Arial,sans-serif; background:transparent; outline:none; width:100%; }
+  .sig-tf:focus { border-bottom-color:#2a5fad; }
+
+  hr.div { border:none; border-top:1px solid #ddd; margin:5px 0; }
+
+  .print-btn {
+    display:block; margin:6px auto 0; padding:6px 24px;
+    background:#2a5fad; color:#fff; font-size:9.5pt; font-weight:bold;
+    border:none; border-radius:4px; cursor:pointer;
+  }
+  .print-btn:hover { background:#1c448a; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <div class="hdr-txt">
+      <strong>BAM IF LLC</strong><br>
+      Ilona McFerrin, Independent Facilitator &nbsp;|&nbsp; Tel: (661) 644-0432 &nbsp;|&nbsp; bamifllc@gmail.com
+    </div>
+  </div>
+
+  <h1>Authorization for Release of Information (HIPAA)</h1>
+
+  <!-- CLIENT INFORMATION -->
+  <div class="sec">Client Information</div>
+  <div class="row">
+    <div class="f w2"><span class="lbl">Client Name</span><input type="text"></div>
+    <div class="f"><span class="lbl">Client UCI #</span><input type="text"></div>
+    <div class="f"><span class="lbl">Date of Birth</span><input type="text" placeholder="MM/DD/YYYY"></div>
+  </div>
+  <div class="row">
+    <div class="f w3"><span class="lbl">Address</span><input type="text"></div>
+  </div>
+
+  <!-- POINT OF CONTACT -->
+  <div class="sec">Point of Contact <span style="font-weight:normal;font-size:8pt">(if different from client)</span></div>
+  <div class="row">
+    <div class="f"><span class="lbl">Name</span><input type="text"></div>
+    <div class="f"><span class="lbl">Relationship</span><input type="text"></div>
+    <div class="f"><span class="lbl">Phone</span><input type="text" placeholder="(xxx) xxx-xxxx" oninput="fmtPhone(this)" maxlength="14"></div>
+    <div class="f"><span class="lbl">Email</span><input type="text"></div>
+  </div>
+
+  <!-- FROM / TO -->
+  <div class="sec">FROM / TO (Authorized Information Exchange)</div>
+  <div class="from-box"><strong>FROM:</strong> BAM IF LLC, Ilona McFerrin, Independent Facilitator</div>
+
+  <div class="row" style="align-items:flex-start;">
+    <div class="f w2">
+      <span class="lbl">TO: Select Regional Center</span>
+      <select id="rcSelect" onchange="updateRC()">
+        <option value="">Select a Regional Center</option>
+        <option value="alta">Alta California Regional Center</option>
+        <option value="cvrc">Central Valley Regional Center</option>
+        <option value="elarc">Eastern Los Angeles Regional Center</option>
+        <option value="fnrc">Far Northern Regional Center</option>
+        <option value="lanterman">Frank D. Lanterman Regional Center</option>
+        <option value="ggrc">Golden Gate Regional Center</option>
+        <option value="harbor">Harbor Regional Center</option>
+        <option value="inland">Inland Regional Center</option>
+        <option value="kern">Kern Regional Center</option>
+        <option value="nbrc">North Bay Regional Center</option>
+        <option value="nlacrc">North Los Angeles County Regional Center</option>
+        <option value="redwood">Redwood Coast Regional Center</option>
+        <option value="rceb">Regional Center of the East Bay</option>
+        <option value="rcoc">Regional Center of Orange County</option>
+        <option value="sanandreas">San Andreas Regional Center</option>
+        <option value="sdrc">San Diego Regional Center</option>
+        <option value="sgprc">San Gabriel/Pomona Regional Center</option>
+        <option value="sclarc">South Central Los Angeles Regional Center</option>
+        <option value="tricounties">Tri Counties Regional Center</option>
+        <option value="vmrc">Valley Mountain Regional Center</option>
+        <option value="westside">Westside Regional Center</option>
+      </select>
+    </div>
+    <div class="f w3">
+      <div class="rc-box" id="rcBox"><span class="rc-empty">Contact info appears here after selecting a regional center.</span></div>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <!-- AUTHORIZATION -->
+  <div class="sec">Authorization</div>
+  <p class="auth-p">
+    I authorize <strong>BAM IF LLC</strong> and the
+    <span id="authRCSpan">___________________________________</span>
+    to share information with each other (bi-directionally) solely for Independent Facilitation and Self-Determination Program (SDP) administrative purposes.
+  </p>
+
+  <!-- INFORMATION TO BE RELEASED -->
+  <div class="sec">Information to Be Released <span style="font-weight:normal;font-size:8pt">(check all that apply)</span></div>
+  <div class="check-grid">
+    <label class="ci"><input type="checkbox" checked> Person-Centered Plan (PCP)</label>
+    <label class="ci"><input type="checkbox" checked> Individual Program Plan (IPP)</label>
+    <label class="ci"><input type="checkbox" checked> SDP Documents</label>
+    <label class="ci"><input type="checkbox" checked> Spending Plan / Budget Information</label>
+    <label class="ci"><input type="checkbox" checked> Service authorizations &amp; expenditure reports</label>
+    <label class="ci"><input type="checkbox" checked> Billing and payment records</label>
+    <label class="ci"><input type="checkbox"> Other: <input type="text" placeholder="Specify..."></label>
+  </div>
+
+  <!-- PURPOSE OF DISCLOSURE -->
+  <div class="sec">Purpose of Disclosure <span style="font-weight:normal;font-size:8pt">(check all that apply)</span></div>
+  <div class="check-grid">
+    <label class="ci"><input type="checkbox" checked> Coordination of services</label>
+    <label class="ci"><input type="checkbox" checked> Independent Facilitation / SDP planning</label>
+    <label class="ci"><input type="checkbox" checked> Communication with Regional Center</label>
+    <label class="ci"><input type="checkbox" checked> FMS coordination</label>
+    <label class="ci"><input type="checkbox" checked> Continuity of care</label>
+    <label class="ci"><input type="checkbox"> Other: <input type="text" placeholder="Specify..."></label>
+  </div>
+
+  <!-- CLIENT RIGHTS -->
+  <div class="sec">Client Rights and Acknowledgements</div>
+  <div class="rights">
+    I understand that I may revoke this authorization at any time by submitting a written request, except to the extent that action has already been taken in reliance on this authorization. I understand that information disclosed pursuant to this authorization may be subject to re-disclosure and may no longer be protected by HIPAA. I have the right to request and receive a copy of this authorization.
+  </div>
+
+  <!-- EXPIRATION & SIGNATURE -->
+  <div class="sec">Expiration &amp; Signature</div>
+  <div class="row" style="margin:3px 0 5px;">
+    <div class="f" style="max-width:210px">
+      <span class="lbl">This authorization expires on</span>
+      <input type="text" placeholder="MM/DD/YYYY">
+    </div>
+  </div>
+
+  <div class="sig-block">
+    <div class="sig-row">
+      <div class="sf">
+        <div class="sig-line"></div>
+        <div class="sig-lbl">Client / Authorized Representative Signature</div>
+      </div>
+      <div class="sf short">
+        <div class="sig-line"></div>
+        <div class="sig-lbl">Date</div>
+      </div>
+    </div>
+    <div class="sig-row">
+      <div class="sf">
+        <span class="lbl" style="font-size:7.5pt;color:#444;font-weight:bold;margin-bottom:0">Printed Name</span>
+        <input type="text" class="sig-tf">
+      </div>
+      <div class="sf">
+        <span class="lbl" style="font-size:7.5pt;color:#444;font-weight:bold;margin-bottom:0">Relationship (if applicable)</span>
+        <input type="text" class="sig-tf">
+      </div>
+    </div>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+
+</div><!-- end .page -->
+
+<script>
+const rc = {
+  alta:       { name:"Alta California Regional Center",               addr:"4151 E Commerce Way, Ste 100, Sacramento, CA 95834",              phone:"(916) 978-6400", fax:"(916) 489-1033" },
+  cvrc:       { name:"Central Valley Regional Center",                addr:"4615 North Marty, Fresno, CA 93722",                             phone:"(559) 276-4300", fax:"(559) 276-4360" },
+  elarc:      { name:"Eastern Los Angeles Regional Center",           addr:"1000 South Fremont Ave, Alhambra, CA 91803",                      phone:"(626) 299-4700", fax:"(626) 281-1163" },
+  fnrc:       { name:"Far Northern Regional Center",                  addr:"1900 Churn Creek Rd, #114, Redding, CA 96002",                    phone:"(530) 222-4791", fax:"(530) 222-8908" },
+  lanterman:  { name:"Frank D. Lanterman Regional Center",            addr:"3303 Wilshire Blvd, Ste 700, Los Angeles, CA 90010",              phone:"(213) 383-1300", fax:"(213) 383-6526" },
+  ggrc:       { name:"Golden Gate Regional Center",                   addr:"1355 Market Street, Ste 220, San Francisco, CA 94103",            phone:"(415) 546-9222", fax:"(415) 546-9203" },
+  harbor:     { name:"Harbor Regional Center",                        addr:"21231 Hawthorne Blvd, Torrance, CA 90503",                        phone:"(310) 540-1711", fax:"(310) 540-9538" },
+  inland:     { name:"Inland Regional Center",                        addr:"1365 S. Waterman Ave, San Bernardino, CA 92408",                  phone:"(909) 890-3000", fax:"(909) 890-3001" },
+  kern:       { name:"Kern Regional Center",                          addr:"3200 North Sillect Ave, Bakersfield, CA 93308",                   phone:"(661) 327-8531", fax:"(661) 324-5060" },
+  nbrc:       { name:"North Bay Regional Center",                     addr:"610 Airpark Road, Napa, CA 94558",                               phone:"(707) 256-1100", fax:"(707) 256-1112" },
+  nlacrc:     { name:"North Los Angeles County Regional Center",      addr:"9200 Oakdale Ave, Ste 100, Chatsworth, CA 91311",                 phone:"(818) 778-1900", fax:"(818) 756-6140" },
+  redwood:    { name:"Redwood Coast Regional Center",                 addr:"1116 Airport Park Blvd, Ukiah, CA 95482",                         phone:"(707) 445-0893", fax:"(707) 462-3314" },
+  rceb:       { name:"Regional Center of the East Bay",               addr:"500 Davis Street, Ste 100, San Leandro, CA 94577",                phone:"(510) 618-6100", fax:"(510) 618-7779" },
+  rcoc:       { name:"Regional Center of Orange County",              addr:"1525 North Tustin Ave, Santa Ana, CA 92705 | West: 10803 Hope St, Ste A, Cypress, CA 90630", phone:"Main: (714) 796-5100 | West: (714) 796-2900", fax:"(714) 796-5200" },
+  sanandreas: { name:"San Andreas Regional Center",                   addr:"6203 San Ignacio Ave, Ste 200, San Jose, CA 95119",               phone:"(408) 374-9960", fax:"(408) 376-0586" },
+  sdrc:       { name:"San Diego Regional Center",                     addr:"4355 Ruffin Road, Ste 200, San Diego, CA 92123",                  phone:"(858) 576-2996", fax:"(858) 576-2873" },
+  sgprc:      { name:"San Gabriel/Pomona Regional Center",            addr:"75 Rancho Camino Drive, Pomona, CA 91766",                       phone:"(909) 620-7722", fax:"(909) 710-8675" },
+  sclarc:     { name:"South Central Los Angeles Regional Center",     addr:"2500 S. Western Ave, Los Angeles, CA 90018",                     phone:"(213) 744-7000", fax:"N/A" },
+  tricounties:{ name:"Tri Counties Regional Center",                  addr:"520 East Montecito St, Santa Barbara, CA 93103",                  phone:"(805) 962-7881", fax:"(805) 884-7229" },
+  vmrc:       { name:"Valley Mountain Regional Center",               addr:"702 North Aurora Street, Stockton, CA 95202",                    phone:"(209) 473-0951", fax:"(209) 473-0256" },
+  westside:   { name:"Westside Regional Center",                      addr:"777 S. Aviation Blvd, Ste 105, El Segundo, CA 90245",             phone:"(310) 258-4000", fax:"(310) 649-1024" }
+};
+
+function updateRC() {
+  const key  = document.getElementById('rcSelect').value;
+  const box  = document.getElementById('rcBox');
+  const span = document.getElementById('authRCSpan');
+  if (!key) {
+    box.innerHTML = '<span class="rc-empty">Contact info appears here after selecting a regional center.</span>';
+    span.textContent = '___________________________________';
+    return;
+  }
+  const d = rc[key];
+  box.innerHTML =
+    '<span class="rc-title">' + d.name + '</span> &nbsp;|&nbsp; ' +
+    d.addr + '<br>' +
+    '<strong>Tel:</strong> ' + d.phone + ' &nbsp;|&nbsp; <strong>Fax:</strong> ' + d.fax;
+  span.textContent = d.name;
+}
+
+function fmtPhone(el) {
+  let v = el.value.replace(/\D/g,'').substring(0,10);
+  let out = '';
+  if (v.length > 0) out = '(' + v.substring(0,3);
+  if (v.length >= 4) out += ') ' + v.substring(3,6);
+  if (v.length >= 7) out += '-' + v.substring(6,10);
+  el.value = out;
+}
+</script>
+</body>
+</html>
