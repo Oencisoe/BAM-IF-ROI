@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Authorization for Release of Protected Health Information (HIPAA): Medical Records | Українська | BAM IF LLC</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 9pt; color: #111; background: #e0e0e0; }
+
+  .page {
+    background: #fff;
+    width: 8.5in;
+    height: 11in;
+    margin: 0.15in auto;
+    padding: 0.28in 0.5in 0.2in;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  }
+
+  @media print {
+    html, body { margin:0; padding:0; background:#fff; }
+    .page { box-shadow:none; margin:0; padding:0.28in 0.5in 0.2in; width:8.5in; height:11in; overflow:hidden; }
+    .print-btn { display:none !important; }
+    select { -webkit-appearance:none; appearance:none; border:none !important; background:transparent !important; font-weight:bold; color:#000; }
+  }
+
+  /* HEADER */
+  .hdr { display:flex; align-items:center; gap:8px; margin-bottom:5px; border-left:4px solid #1a3a6e; padding-left:8px; }
+  .hdr img { height:52px; width:auto; }
+  .hdr-txt { font-size:8.5pt; line-height:1.4; }
+  .hdr-txt strong { font-size:10pt; }
+
+  /* TITLE */
+  h1 { text-align:center; font-size:11.5pt; text-transform:uppercase; border-bottom:2px solid #000; padding-bottom:2px; margin-bottom:6px; letter-spacing:0.3px; }
+
+  /* SECTION HEADINGS */
+  .sec { font-weight:bold; font-size:9pt; margin:5px 0 3px; border-bottom:1px solid #444; padding-bottom:1px; }
+
+  /* ROWS */
+  .row { display:flex; gap:10px; margin-bottom:4px; }
+  .f { display:flex; flex-direction:column; flex:1; min-width:0; }
+  .f.w2 { flex:2; }
+  .f.w3 { flex:3; }
+  .f > .lbl { font-size:7.5pt; color:#444; font-weight:bold; margin-bottom:0px; white-space:nowrap; }
+
+  /* INPUTS */
+  input[type="text"] {
+    border:none; border-bottom:1px solid #555; padding:1px 2px;
+    font-size:9pt; font-family:Arial,sans-serif; background:transparent;
+    outline:none; width:100%; line-height:1.2;
+  }
+  input[type="text"]:focus { border-bottom-color:#2a5fad; }
+
+  /* DROPDOWN */
+  select {
+    border:1px solid #888; border-radius:2px; padding:2px 4px;
+    font-size:9pt; font-family:Arial,sans-serif;
+    background:#f9f9f9; cursor:pointer; outline:none; width:100%;
+  }
+  select:focus { border-color:#2a5fad; }
+
+  /* RC INFO BOX */
+  .rc-box {
+    border:1px solid #3a6ea5; border-radius:2px; background:#f0f5ff;
+    padding:3px 8px; font-size:8.5pt; line-height:1.5; margin-top:3px; min-height:32px;
+  }
+  .rc-title { font-weight:bold; color:#1a3a6e; }
+  .rc-empty { color:#aaa; font-style:italic; }
+
+  /* FROM BOX */
+  .from-box {
+    background:#f6f6f6; border:1px solid #ccc; border-radius:2px;
+    padding:3px 8px; font-size:8.8pt; line-height:1.5; margin-bottom:4px;
+  }
+
+  /* AUTH TEXT */
+  .auth-p { font-size:8.8pt; line-height:1.4; margin:3px 0; }
+  #authRCSpan { font-weight:bold; color:#1a3a6e; }
+
+  /* CHECKBOXES: 3 columns */
+  .check-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px 6px; margin:2px 0; }
+  .ci { display:flex; align-items:baseline; gap:4px; font-size:8.5pt; }
+  .ci input[type="checkbox"] { width:11px; height:11px; flex-shrink:0; cursor:pointer; position:relative; top:1px; }
+  .ci input[type="text"] { border:none; border-bottom:1px solid #888; font-size:8.5pt; font-family:Arial,sans-serif; background:transparent; outline:none; padding:0 2px; width:110px; }
+
+  /* RIGHTS */
+  .rights {
+    font-size:8pt; line-height:1.35; color:#333;
+    background:#fafafa; border-left:3px solid #aaa;
+    padding:3px 8px; margin:3px 0;
+  }
+
+  /* SIGNATURE */
+  .sig-block { margin-top:5px; }
+  .sig-row { display:flex; gap:20px; margin-bottom:6px; }
+  .sf { display:flex; flex-direction:column; flex:2; }
+  .sf.short { flex:0.7; min-width:90px; }
+  .sig-line { border-bottom:1px solid #333; height:20px; }
+  .sig-lbl { font-size:7.5pt; color:#444; margin-top:1px; }
+  .sig-tf { border:none; border-bottom:1px solid #555; padding:1px 2px; font-size:9pt; font-family:Arial,sans-serif; background:transparent; outline:none; width:100%; }
+  .sig-tf:focus { border-bottom-color:#2a5fad; }
+
+  hr.div { border:none; border-top:1px solid #ddd; margin:5px 0; }
+
+  .print-btn {
+    display:block; margin:6px auto 0; padding:6px 24px;
+    background:#2a5fad; color:#fff; font-size:9.5pt; font-weight:bold;
+    border:none; border-radius:4px; cursor:pointer;
+  }
+  .print-btn:hover { background:#1c448a; }
+
+  .provider-box { border:1px solid #3a6ea5; border-radius:2px; background:#f0f5ff; padding:3px 8px 4px; margin-bottom:3px; }
+  .to-box { background:#f6f6f6; border:1px solid #ccc; border-radius:2px; padding:3px 8px; font-size:8.8pt; line-height:1.45; margin-bottom:3px; }
+  .auth-p strong.e { color:#1a3a6e; }
+  .sec small { font-weight:normal; font-size:8pt; }
+  .page { padding-top:0.25in; }
+  .row { margin-bottom:2px; }
+  .sec { margin:4px 0 2px; }
+</style>
+
+<style>
+@page{size:8.5in 11in;margin:0.4in 0.5in 0.45in}
+.page{height:auto;min-height:11in;overflow:visible}
+@media print{html,body{background:#fff}.page{width:auto;height:auto;min-height:0;margin:0;padding:0;overflow:visible;box-shadow:none}}
+.f > .lbl{white-space:normal}
+.check-grid{grid-template-columns:1fr 1fr}
+.tr{font-size:8pt;color:#1a3a6e;line-height:1.35;margin:1px 0 4px}
+.tr-lbl,.tr-sec,.tr-ci{color:#1a3a6e;font-weight:normal}
+.tr-sec{font-size:8pt}
+.tr-title{text-align:center;font-size:9.5pt;font-weight:bold;color:#1a3a6e;margin:-3px 0 6px}
+.rights.tr{color:#1a3a6e;border-left-color:#1a3a6e}
+.sig-block,.rights,.auth-p,.from-box,.to-box,.provider-box,.row,.check-grid{break-inside:avoid}
+.row .f[style*="max-width"]{max-width:340px!important}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-txt">
+      <strong>BAM IF LLC</strong><br>
+      Ilona McFerrin, Independent Facilitator &nbsp;|&nbsp; Tel: (661) 644-0432 &nbsp;|&nbsp; bamifllc@gmail.com
+    </div>
+  </div>
+  <h1>Authorization for Release of Protected Health Information (HIPAA)</h1>
+  <div class="tr-title">Дозвіл на розкриття захищеної медичної інформації (HIPAA)</div>
+
+  <div class="sec">Individual <span class="tr-sec">/ Особа</span></div>
+  <div class="row">
+    <div class="f w2"><span class="lbl">Full Legal Name <span class="tr-lbl">/ Повне офіційне ім’я</span></span><input type="text" id="indName" oninput="syncAuth()"></div>
+    <div class="f"><span class="lbl">Regional Center UCI # <span class="tr-lbl">/ Номер UCI в Регіональному центрі</span></span><input type="text"></div>
+    <div class="f"><span class="lbl">Date of Birth <span class="tr-lbl">/ Дата народження</span></span><input type="text" placeholder="MM/DD/YYYY"></div>
+  </div>
+  <div class="row"><div class="f w3"><span class="lbl">Address <span class="tr-lbl">/ Адреса</span></span><input type="text"></div></div>
+  <div class="row">
+    <div class="f"><span class="lbl">Phone <span class="tr-lbl">/ Телефон</span></span><input type="text" placeholder="(xxx) xxx-xxxx" oninput="fmtPhone(this)" maxlength="14"></div>
+    <div class="f w2"><span class="lbl">Email <span class="tr-lbl">/ Електронна пошта</span></span><input type="text"></div>
+  </div>
+
+  <div class="sec">Authorized Representative <span class="tr-sec">/ Уповноважений представник</span> <small>(parent, guardian or conservator signing for the individual) <span class="tr-sec">/ (батько, мати, опікун або піклувальник, який підписує від імені цієї особи)</span></small></div>
+  <div class="row">
+    <div class="f"><span class="lbl">Name <span class="tr-lbl">/ Ім’я</span></span><input type="text"></div>
+    <div class="f"><span class="lbl">Relationship <span class="tr-lbl">/ Ступінь споріднення</span></span><input type="text"></div>
+    <div class="f"><span class="lbl">Phone <span class="tr-lbl">/ Телефон</span></span><input type="text" placeholder="(xxx) xxx-xxxx" oninput="fmtPhone(this)" maxlength="14"></div>
+    <div class="f"><span class="lbl">Email <span class="tr-lbl">/ Електронна пошта</span></span><input type="text"></div>
+  </div>
+
+  <div class="sec">FROM: Disclosing Provider <span class="tr-sec">/ ВІД: Постачальник, що надає інформацію</span></div>
+  <div class="provider-box">
+    <div class="row">
+      <div class="f w2"><span class="lbl">Provider or clinic name <span class="tr-lbl">/ Назва медичного закладу або клініки</span></span><input type="text" id="provName" oninput="syncAuth()"></div>
+      <div class="f w2"><span class="lbl">Department or clinician <span class="tr-lbl">/ Відділення або лікар</span></span><input type="text"></div>
+    </div>
+    <div class="row">
+      <div class="f w3"><span class="lbl">Address <span class="tr-lbl">/ Адреса</span></span><input type="text"></div>
+      <div class="f"><span class="lbl">Phone <span class="tr-lbl">/ Телефон</span></span><input type="text" placeholder="(xxx) xxx-xxxx" oninput="fmtPhone(this)" maxlength="14"></div>
+      <div class="f"><span class="lbl">Fax <span class="tr-lbl">/ Факс</span></span><input type="text" placeholder="(xxx) xxx-xxxx" oninput="fmtPhone(this)" maxlength="14"></div>
+    </div>
+  </div>
+  <div class="sec">TO: Receiving Party <span class="tr-sec">/ КОМУ: Одержувач</span></div>
+  <div class="to-box"><strong>BAM IF LLC</strong>, Ilona McFerrin, Independent Facilitator<br>
+  Tel: (661) 644-0432 &nbsp;|&nbsp; bamifllc@gmail.com</div>
+
+  <div class="sec">Authorization <span class="tr-sec">/ Дозвіл</span></div>
+  <p class="auth-p">I authorize <strong class="e" id="authProv">the provider named above</strong> to release the records checked below for <strong id="authInd">the individual named above</strong> to <strong>BAM IF LLC</strong>, and I authorize the two parties to communicate with each other about those records, for the purposes checked below.</p>
+  <p class="auth-p tr">Я дозволяю <strong class="e" id="authProvT">зазначеному вище постачальнику</strong> надати зазначені нижче документи щодо <strong id="authIndT">зазначеної вище особи</strong> організації <strong>BAM IF LLC</strong> і дозволяю обом сторонам спілкуватися між собою щодо цих документів для цілей, зазначених нижче.</p>
+
+  <div class="sec">Records to Be Released <span class="tr-sec">/ Документи, які дозволено надати</span> <small>(check all that apply) <span class="tr-sec">/ (позначте всі відповідні варіанти)</span></small></div>
+  <div class="check-grid"><label class="ci"><input type="checkbox"> Medical records: diagnosis, evaluation and treatment <span class="tr-ci">/ Медичні картки: діагностика, оцінка та лікування</span></label><label class="ci"><input type="checkbox"> Hospital, ER and discharge summaries <span class="tr-ci">/ Виписки з лікарень, відділень невідкладної допомоги та виписки з лікарні</span></label><label class="ci"><input type="checkbox"> Medication lists and prescribing records <span class="tr-ci">/ Переліки лікарських засобів та записи про призначення ліків</span></label><label class="ci"><input type="checkbox"> Therapy records (OT, PT, speech, feeding, behavioral) <span class="tr-ci">/ Медичні записи щодо терапії (ерготерапія, фізіотерапія, логопедія, корекція харчування, корекція поведінки)</span></label><label class="ci"><input type="checkbox"> Psychological and psychiatric evaluations <span class="tr-ci">/ Психологічні та психіатричні обстеження</span></label><label class="ci"><input type="checkbox"> Behavioral assessments and treatment plans <span class="tr-ci">/ Оцінка поведінки та плани лікування</span></label><label class="ci"><input type="checkbox"> Imaging, EEG and other test results <span class="tr-ci">/ Результати візуалізаційних досліджень, ЕЕГ та інших обстежень</span></label><label class="ci"><input type="checkbox"> Laboratory and screening results (vision, hearing) <span class="tr-ci">/ Результати лабораторних досліджень та обстежень (зір, слух)</span></label><label class="ci"><input type="checkbox"> Authorizations, referrals and insurance decisions <span class="tr-ci">/ Дозволи, направлення та рішення щодо страхування</span></label></div>
+  <div class="row" style="margin-top:3px">
+    <div class="f"><span class="lbl">Date range of records: from <span class="tr-lbl">/ Діапазон дат записів: від</span></span><input type="text" placeholder="MM/DD/YYYY"></div>
+    <div class="f"><span class="lbl">to <span class="tr-lbl">/ до</span></span><input type="text" placeholder="MM/DD/YYYY"></div>
+    <div class="f w2"></div>
+  </div>
+
+  <div class="sec">California Mental Health Records <span class="tr-sec">/ Медичні записи про психічне здоров’я в Каліфорнії</span></div>
+  <div class="rights">Pursuant to California Welfare and Institutions Code sections 5328 to 5328.15 and the Lanterman-Petris-Short Act, I specifically authorize the release of mental health records, including psychiatric diagnoses, evaluations and treatment notes, to the extent permitted by law.
+  <div class="tr" style="margin-top:3px">Відповідно до статей 5328–5328.15 Кодексу Каліфорнії про соціальне забезпечення та установи та Закону Лантермана-Петріса-Шорта я надаю конкретне дозвіл на розкриття медичних даних про психічне здоров’я, включаючи психіатричні діагнози, висновки експертиз та записи про лікування, у межах, дозволених законом.</div>
+  <div style="margin-top:3px"><label class="ci"><input type="checkbox"> I expressly authorize release of mental health records protected under California law. <span class="tr-ci">/ Я надаю чітку згоду на розкриття медичних даних про психічне здоров’я, які захищені законодавством штату Каліфорнія.</span></label></div></div>
+
+  <div class="sec">Purpose of Disclosure <span class="tr-sec">/ Мета розкриття</span> <small>(check all that apply) <span class="tr-sec">/ (позначте всі відповідні варіанти)</span></small></div>
+  <div class="check-grid"><label class="ci"><input type="checkbox"> Care coordination <span class="tr-ci">/ Координація підтримки</span></label><label class="ci"><input type="checkbox"> Independent Facilitation and person-centered planning <span class="tr-ci">/ Незалежна фасилітація та особистісно орієнтоване планування</span></label><label class="ci"><input type="checkbox"> Self-Determination Program planning <span class="tr-ci">/ Планування Програми самовизначення (SDP)</span></label><label class="ci"><input type="checkbox"> Continuity of care <span class="tr-ci">/ Безперервність підтримки</span></label><label class="ci"><input type="checkbox"> Communication with the Regional Center <span class="tr-ci">/ Зв’язок із регіональним центром</span></label></div>
+
+  <div class="sec">Permitted Method of Transmission <span class="tr-sec">/ Дозволений спосіб передачі</span></div>
+  <div class="check-grid"><label class="ci"><input type="checkbox"> Secure email <span class="tr-ci">/ Безпечна електронна пошта</span></label><label class="ci"><input type="checkbox"> Fax <span class="tr-ci">/ Факс</span></label><label class="ci"><input type="checkbox"> Secure electronic portal <span class="tr-ci">/ Захищений електронний портал</span></label><label class="ci"><input type="checkbox"> Mail <span class="tr-ci">/ Пошта</span></label></div>
+
+  <div class="sec">Expiration <span class="tr-sec">/ Термін дії</span></div>
+  <div class="check-grid"><label class="ci"><input type="checkbox"> One (1) year from the date of signature <span class="tr-ci">/ Один (1) рік з дати підписання</span></label><label class="ci"><input type="checkbox"> Upon termination of Independent Facilitation services <span class="tr-ci">/ Після припинення послуг незалежної фасилітації</span></label><label class="ci"><input type="checkbox"> On this date: <span class="tr-ci">/ Цього дня:</span> <input type="text" placeholder="MM/DD/YYYY"></label></div>
+
+  <div class="sec">Rights and Acknowledgements <span class="tr-sec">/ Права та підтвердження</span></div>
+  <div class="rights">I understand that I may revoke this authorization at any time by submitting a written request to the disclosing provider, except to the extent that action has already been taken in reliance on it. I understand that once the records are released, they may be shared again by the recipient and may no longer be protected by federal or state privacy law. BAM IF LLC will share them only with the individual's family and the Regional Center, for the purposes checked above, and will not release them to any other person or organization without a separate written authorization. I understand that treatment, payment, enrollment and eligibility for benefits will not be conditioned on signing this authorization. I have the right to receive a copy of this authorization.</div>
+  <div class="rights tr">Я розумію, що можу відкликати цю згоду в будь-який час, подавши письмовий запит до постачальника, який надає інформацію, за винятком випадків, коли на підставі цієї згоди вже було вжито відповідних заходів. Я розумію, що після розкриття медичних записів їх може бути передано далі отримувачем, і вони більше не будуть захищені федеральним або штатним законодавством про конфіденційність. Організація «BAM IF LLC» надасть ці записи лише родині особи та Регіональному центру для цілей, зазначених вище, і не передаватиме їх жодній іншій особі чи організації без окремої письмової згоди. Я розумію, що лікування, оплата, реєстрація та право на отримання пільг не будуть залежати від підписання цієї згоди. Я маю право отримати копію цієї згоди.</div>
+
+  <div class="sig-block">
+    <div class="sig-row">
+      <div class="sf"><div class="sig-line"></div><div class="sig-lbl">Signature of Individual or Authorized Representative <span class="tr-lbl">/ Підпис фізичної особи або уповноваженого представника</span></div></div>
+      <div class="sf short"><div class="sig-line"></div><div class="sig-lbl">Date <span class="tr-lbl">/ Дата</span></div></div>
+    </div>
+    <div class="sig-row">
+      <div class="sf"><span class="lbl" style="font-size:7.5pt;color:#444;font-weight:bold">Printed Name <span class="tr-lbl">/ Ім’я друкованими літерами</span></span><input type="text" class="sig-tf"></div>
+      <div class="sf"><span class="lbl" style="font-size:7.5pt;color:#444;font-weight:bold">Relationship to Individual <span class="tr-lbl">/ Ступінь споріднення з особою</span></span><input type="text" class="sig-tf"></div>
+    </div>
+  </div>
+  <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+</div>
+<script>
+function syncAuth() {
+  const p = document.getElementById('provName').value.trim();
+  const i = document.getElementById('indName').value.trim();
+  document.getElementById('authProv').textContent = p || 'the provider named above';
+  document.getElementById('authInd').textContent = i || 'the individual named above';
+  document.getElementById('authProvT').textContent = p || "зазначеному вище постачальнику";
+  document.getElementById('authIndT').textContent = i || "зазначеної вище особи";
+}
+function fmtPhone(el) {
+  let v = el.value.replace(/\D/g,'').substring(0,10);
+  let out = '';
+  if (v.length > 0) out = '(' + v.substring(0,3);
+  if (v.length >= 4) out += ') ' + v.substring(3,6);
+  if (v.length >= 7) out += '-' + v.substring(6,10);
+  el.value = out;
+}
+</script>
+</body>
+</html>
